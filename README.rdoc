@@ -6,6 +6,10 @@ OR (to be added) add some interface checking BEFORE you try to use the interface
 == Why?
 Long story. Will elaborate later.
 
+=== Inspiration
+* Scala (optional static typing)
+* this: http://www.reddit.com/r/programming/comments/9dzpu/ask_reddit_why_does_everyone_hate_java/c0ceg52
+
 == Current state
 I just started working on it, more like proof of concept with not-so-clear vision on how it should be used.
 
