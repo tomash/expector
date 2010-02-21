@@ -1,0 +1,29 @@
+= Expector
+Add some optional static typing to your Ruby code.
+
+OR (to be added) add some interface checking BEFORE you try to use the interface. Yes, it is an application of "return early" pattern, the controversial one that goes against Dijkstra's claim that methods should have only one exit point.
+
+== Why?
+Long story. Will elaborate later.
+
+== Current state
+I just started working on it, more like proof of concept with not-so-clear vision on how it should be used.
+
+== Usage
+This is pretty crude at the moment -- no gem, no plugin.
+  require 'expector'
+  
+  #you can use it at any moment
+  a = 1
+  b = 1.0
+  c = ""
+  d = "sumting"
+  e = Proc.new { puts "eee" }
+
+  expect a => Fixnum, b => Float, c => String, d => Enumerable, e => Proc
+  
+  #but it's mostly aimed at being an early exit point for methods:
+  def doing_something(sometext, somenumber)
+    expect sometext => String, somenumber => Numeric
+    sometext * somenumber
+  end
